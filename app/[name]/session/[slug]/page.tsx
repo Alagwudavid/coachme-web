@@ -83,8 +83,8 @@ export default function SessionOverviewPage() {
 
   const tabs = [
     { id: "overview", label: "Overview", isActivated: true },
-    { id: "faq", label: "FAQ", href: `/coachme/${coachSlug}/event/` },
-    { id: "review", label: "Review", href: `/coachme/${coachSlug}/review` },
+    { id: "faq", label: "FAQ", href: `/${coachSlug}/event/` },
+    { id: "review", label: "Review", href: `/${coachSlug}/review` },
   ];
 
   return (

@@ -101,7 +101,7 @@ function HomePage() {
                   key={product.id}
                   productItem={product}
                   onClick={() =>
-                    router.push(`/coachme/${coachSlug}/product/${product.slug}`)
+                    router.push(`/${coachSlug}/product/${product.slug}`)
                   }
                 />
               );
@@ -133,9 +133,7 @@ function HomePage() {
                   key={course.id}
                   courseItem={course}
                   onClick={() =>
-                    router.push(
-                      `/coachme/${coachSlug}/classroom/${course.slug}`,
-                    )
+                    router.push(`/${coachSlug}/classroom/${course.slug}`)
                   }
                 />
               );
@@ -167,7 +165,7 @@ function HomePage() {
                   key={service.id}
                   serviceItem={service}
                   onClick={() =>
-                    router.push(`/coachme/${coachSlug}/session/${service.slug}`)
+                    router.push(`/${coachSlug}/session/${service.slug}`)
                   }
                 />
               );
@@ -192,7 +190,7 @@ function HomePage() {
             {popularCoaches.map((coach) => (
               <Link
                 key={coach.id}
-                href={`/coachme/${coach.slug}/home`}
+                href={`/${coach.slug}/home`}
                 className="relative h-80 rounded-2xl overflow-hidden cursor-pointer group block"
                 style={{
                   backgroundImage: `url(${coach.image})`,

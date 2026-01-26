@@ -53,7 +53,7 @@ function ClassroomPage() {
               key={course.id}
               courseItem={course}
               onClick={() =>
-                router.push(`/coachme/${coachSlug}/classroom/${course.slug}`)
+                router.push(`/${coachSlug}/classroom/${course.slug}`)
               }
             />
           ))}

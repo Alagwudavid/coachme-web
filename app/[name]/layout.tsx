@@ -21,22 +21,22 @@ export default function CoachLayout({
   }
 
   const tabs = [
-    { id: "shop", label: "Shop", href: `/coachme/${coachSlug}/shop` },
+    { id: "shop", label: "Shop", href: `/${coachSlug}/shop` },
     {
       id: "classroom",
       label: "Classroom",
-      href: `/coachme/${coachSlug}/classroom`,
+      href: `/${coachSlug}/classroom`,
     },
     {
       id: "membership",
       label: "Membership",
-      href: `/coachme/${coachSlug}/membership`,
+      href: `/${coachSlug}/membership`,
     },
-    { id: "about", label: "About", href: `/coachme/${coachSlug}/about` },
+    { id: "about", label: "About", href: `/${coachSlug}/about` },
     {
       id: "calendar",
       label: "Calendar",
-      href: `/coachme/${coachSlug}/calendar`,
+      href: `/${coachSlug}/calendar`,
     },
   ];
 

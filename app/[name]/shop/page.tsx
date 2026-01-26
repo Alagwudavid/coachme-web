@@ -83,9 +83,7 @@ function ShopPage() {
                     <div
                       key={product.id}
                       onClick={() =>
-                        router.push(
-                          `/coachme/${coachSlug}/product/${product.slug}`,
-                        )
+                        router.push(`/${coachSlug}/product/${product.slug}`)
                       }
                       className="bg-card overflow-hidden p-2 rounded-2xl hover:shadow-lg transition-all cursor-pointer group space-y-3"
                     >

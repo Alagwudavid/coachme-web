@@ -162,18 +162,18 @@ export default function EventOverviewPage() {
     {
       id: "overview",
       label: "Overview",
-      href: `/coachme/${coachSlug}/event/${eventItem.slug}`,
+      href: `/${coachSlug}/event/${eventItem.slug}`,
     },
     {
       id: "curriculum",
       label: "Curriculum",
-      href: `/coachme/${coachSlug}/event/${eventItem.slug}/curriculum`,
+      href: `/${coachSlug}/event/${eventItem.slug}/curriculum`,
     },
-    // { id: 'creator', label: 'Creator', href: `/coachme/${coachSlug}/event/${eventItem.slug}/creator` },
+    // { id: 'creator', label: 'Creator', href: `/${coachSlug}/event/${eventItem.slug}/creator` },
     {
       id: "reviews",
       label: "Reviews",
-      href: `/coachme/${coachSlug}/event/${eventItem.slug}/reviews`,
+      href: `/${coachSlug}/event/${eventItem.slug}/reviews`,
     },
   ];
 

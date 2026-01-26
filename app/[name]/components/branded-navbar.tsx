@@ -42,7 +42,7 @@ export default function BrandedNavbar() {
           <div className="flex items-center justify-between gap-8">
             {/* Logo */}
             <Link
-              href={`/coachme/${coachSlug}/home`}
+              href={`/${coachSlug}/home`}
               className="flex items-center gap-2 select-none"
             >
               <div className="w-10 h-10 rounded-lg overflow-hidden bg-muted flex items-center justify-center relative">
@@ -102,42 +102,42 @@ export default function BrandedNavbar() {
                   <div className="absolute right-0 mt-2 w-screen max-w-xs bg-background border rounded-lg shadow-xl overflow-hidden z-50 max-h-[calc(100vh-5rem)] overflow-y-auto">
                     <div className="p-4 space-y-3">
                       <Link
-                        href={`/coachme/${coachSlug}/home`}
+                        href={`/${coachSlug}/home`}
                         onClick={() => setIsMobileMenuOpen(false)}
                         className="flex items-center gap-1 py-2 cursor-pointer text-base font-medium hover:text-primary transition-colors"
                       >
                         Home
                       </Link>
                       <Link
-                        href={`/coachme/${coachSlug}/classroom`}
+                        href={`/${coachSlug}/classroom`}
                         onClick={() => setIsMobileMenuOpen(false)}
                         className="flex items-center gap-1 py-2 cursor-pointer text-base font-medium hover:text-primary transition-colors"
                       >
                         Classroom
                       </Link>
                       <Link
-                        href={`/coachme/${coachSlug}/membership`}
+                        href={`/${coachSlug}/membership`}
                         onClick={() => setIsMobileMenuOpen(false)}
                         className="flex items-center gap-1 py-2 cursor-pointer text-base font-medium hover:text-primary transition-colors"
                       >
                         Membership
                       </Link>
                       <Link
-                        href={`/coachme/${coachSlug}/calendar`}
+                        href={`/${coachSlug}/calendar`}
                         onClick={() => setIsMobileMenuOpen(false)}
                         className="flex items-center gap-1 py-2 cursor-pointer text-base font-medium hover:text-primary transition-colors"
                       >
                         Calendar
                       </Link>
                       <Link
-                        href={`/coachme/${coachSlug}/community`}
+                        href={`/${coachSlug}/community`}
                         onClick={() => setIsMobileMenuOpen(false)}
                         className="flex items-center gap-1 py-2 cursor-pointer text-base font-medium hover:text-primary transition-colors"
                       >
                         Community
                       </Link>
                       <Link
-                        href={`/coachme/${coachSlug}/about`}
+                        href={`/${coachSlug}/about`}
                         onClick={() => setIsMobileMenuOpen(false)}
                         className="flex items-center gap-1 py-2 cursor-pointer text-base font-medium hover:text-primary transition-colors"
                       >
