@@ -34,7 +34,45 @@ const buttonVariants = cva(
     },
   },
 )
-
+{/* <style>
+  @property --angle {
+    syntax: "<angle>";
+    initial-value: 0deg;
+    inherits: false;
+  }
+  .btn-lightX::before, .btn-lightX::after {
+    content: "";
+    position: absolute;
+    inset: -2px;
+    background-color: inherit;
+    border-radius: inherit;
+    background-image: conic-gradient(
+    from var(--angle) at 50% 50%,
+    transparent 0%,
+    transparent 33%,
+    hsl(var(--color-primary)) 50%,
+    transparent 50%,
+  )
+  .btn-lightX::before {
+    filter: blur(15px);
+  }
+  .inner {
+    position: absolute;
+    inset: 0;
+    background: radial-gradient(
+      100px circle at var(--mouseX) var(--mouseY),
+      hsl(var(--color-primary) / 0.3),
+      transparent 50%
+    );
+    border-radius: inherit;
+    z-index: 0;
+    opacity: 0;
+  }
+  .btn-lightX:hover .inner {
+    opacity: 1;
+  }
+}
+</style> */}
 function Button({
   className,
   variant,

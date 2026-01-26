@@ -4,7 +4,7 @@ import { useRouter } from "next/navigation";
 import { useState } from "react";
 import { coaches } from "../../data/coaches";
 import { courses } from "../../data/courses";
-import { CourseCard } from "../../components/course-card";
+import { CourseCard } from "../../../components/course-card";
 
 export default function EventsPage() {
   const router = useRouter();

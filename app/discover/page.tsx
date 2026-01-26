@@ -11,7 +11,7 @@ import { getCoachById } from "@/app/data/utils";
 import { CourseCard } from "@/components/course-card";
 import { ServiceCard } from "@/components/service-card";
 import { ProductCard } from "@/components/product-card";
-import SearchBar from "../components/search-bar";
+import SearchBar from "../../components/search-bar";
 
 const PremiumIcon = (props: React.SVGProps<SVGSVGElement>) => {
   return (

@@ -1,21 +1,21 @@
-'use client';
+"use client";
 
-import Navbar from '../../components/navbar';
-import Sidebar from '../../components/sidebar';
-import ResponsiveContainer from '../../components/responsive-container';
+import Navbar from "../../../components/navbar";
+import Sidebar from "../../../components/sidebar";
+import ResponsiveContainer from "../../../components/responsive-container";
 
 export default function QuizLayout({
-    children,
+  children,
 }: {
-    children: React.ReactNode;
+  children: React.ReactNode;
 }) {
-    return (
-        <>
-            <Navbar />
-            <Sidebar />
-            <ResponsiveContainer className="min-h-page bg-muted">
-                {children}
-            </ResponsiveContainer>
-        </>
-    );
+  return (
+    <>
+      <Navbar />
+      <Sidebar />
+      <ResponsiveContainer className="min-h-page bg-muted">
+        {children}
+      </ResponsiveContainer>
+    </>
+  );
 }

@@ -2,7 +2,7 @@
 
 import { useState } from "react";
 import Image from "next/image";
-import Rightbar from "../components/rightbar";
+import Rightbar from "../../components/rightbar";
 import {
   ChartPie,
   Coins,

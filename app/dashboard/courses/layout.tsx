@@ -1,5 +1,5 @@
 import { Metadata } from "next";
-import Navbar from "@/components/navbar";
+import Navbar from "@/components/old/navbar";
 import Sidebar from "@/components/sidebar";
 
 export const metadata: Metadata = {

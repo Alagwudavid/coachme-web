@@ -8,7 +8,7 @@ import { usePathname, useParams } from "next/navigation";
 import { getCoachBySlug } from "@/app/data/utils";
 import SearchBar from "./search-bar";
 import appLogo from "@/public/logo.png";
-import Tooltip from "../../components/ui/tooltip";
+import Tooltip from "../../../components/ui/tooltip";
 
 export default function BrandedNavbar() {
   const [isProfileOpen, setIsProfileOpen] = useState(false);

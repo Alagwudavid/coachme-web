@@ -3,7 +3,7 @@
 import { useRouter } from "next/navigation";
 import { useState } from "react";
 import { services } from "../../data/services";
-import { ServiceCard } from "../../components/service-card";
+import { ServiceCard } from "../../../components/service-card";
 import { coaches } from "../../data/coaches";
 
 export default function ServicesPage() {
