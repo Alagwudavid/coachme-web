@@ -6,6 +6,7 @@ import "./globals.css";
 export const metadata: Metadata = {
   title: "Coachme - CoachMe",
   description: "CoachMe Application",
+  manifest: "/manifest.json",
 };
 
 export default function CoachmeLayout({
