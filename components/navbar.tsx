@@ -262,54 +262,54 @@ export default function Navbar() {
       {
         icon: <ProductIcon className="w-5 h-5" />,
         label: "Products",
-        href: "/coachme/discover/products",
+        href: "/discover/products",
       },
       {
         icon: <TicketIcon className="w-5 h-5" />,
         label: "Events",
-        href: "/coachme/discover/events",
+        href: "/discover/events",
       },
       {
         icon: <ServiceIcon className="w-5 h-5" />,
         label: "Services",
-        href: "/coachme/discover/services",
+        href: "/discover/services",
       },
       {
         icon: <CoachIcon className="w-5 h-5" />,
         label: "Creators",
-        href: "/coachme/discover/creator",
+        href: "/discover/creator",
       },
     ],
     rightColumn: [
       {
         icon: <DevIcon className="w-5 h-5" />,
         label: "Development",
-        href: "/coachme/discover/development",
+        href: "/discover/development",
       },
       {
         icon: <DesignIcon className="w-5 h-5" />,
         label: "Design",
-        href: "/coachme/discover/design",
+        href: "/discover/design",
       },
       {
         icon: <Briefcase className="w-5 h-5" />,
         label: "Business",
-        href: "/coachme/discover/business",
+        href: "/discover/business",
       },
       {
         icon: <MarketingIcon className="w-5 h-5" />,
         label: "Marketing",
-        href: "/coachme/discover/marketing",
+        href: "/discover/marketing",
       },
       {
         icon: <MusicIcon className="w-5 h-5" />,
         label: "Music",
-        href: "/coachme/discover/music",
+        href: "/discover/music",
       },
       {
         icon: <PhotographyIcon className="w-5 h-5" />,
         label: "Photography",
-        href: "/coachme/discover/photography",
+        href: "/discover/photography",
       },
     ],
   };
@@ -318,36 +318,36 @@ export default function Navbar() {
     {
       icon: <GraduationCap className="w-4 h-4" />,
       label: "Become an Instructor",
-      href: "/coachme/creator/join",
+      href: "/creator/join",
     },
     {
       icon: <BookOpen className="w-4 h-4" />,
       label: "Teaching Resources",
-      href: "/coachme/instructor/resources",
+      href: "/instructor/resources",
     },
     {
       icon: <Users className="w-4 h-4" />,
       label: "Instructor Community",
-      href: "/coachme/instructor/community",
+      href: "/instructor/community",
     },
     {
       icon: <Building className="w-4 h-4" />,
       label: "For Organizations",
-      href: "/coachme/instructor/organizations",
+      href: "/instructor/organizations",
     },
   ];
 
   const aboutLinks = {
     leftColumn: [
-      { label: "How Coachme works", href: "/coachme/how-it-works" },
-      { label: "Pricing", href: "/coachme/pricing" },
-      { label: "Help Centre", href: "/coachme/help" },
-      { label: "Documentation", href: "/coachme/docs" },
+      { label: "How Coachme works", href: "/how-it-works" },
+      { label: "Pricing", href: "/pricing" },
+      { label: "Help Centre", href: "/help" },
+      { label: "Documentation", href: "/docs" },
     ],
     rightColumn: [
       { label: "About Coachme", href: "/coachme#about-us" },
-      { label: "Blog", href: "/coachme/press" },
-      { label: "Careers", href: "/coachme/careers" },
+      { label: "Blog", href: "/press" },
+      { label: "Careers", href: "/careers" },
     ],
   };
 
