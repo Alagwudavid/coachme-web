@@ -1,7 +1,7 @@
 "use client";
 
 import { useParams, useRouter } from "next/navigation";
-import { services, type Service } from "@/app/coachme/data/services";
+import { services, type Service } from "@/app/data/services";
 import {
   ArrowLeft,
   Play,

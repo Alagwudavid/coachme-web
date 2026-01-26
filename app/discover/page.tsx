@@ -3,11 +3,11 @@
 import { ArrowRight } from "lucide-react";
 import { useRouter } from "next/navigation";
 import Link from "next/link";
-import { courses } from "@/app/coachme/data/courses";
-import { products, type Product } from "@/app/coachme/data/products";
-import { services, type Service } from "@/app/coachme/data/services";
-import { coaches, type Coach } from "@/app/coachme/data/coaches";
-import { getCoachById } from "@/app/coachme/data/utils";
+import { courses } from "@/app/data/courses";
+import { products, type Product } from "@/app/data/products";
+import { services, type Service } from "@/app/data/services";
+import { coaches, type Coach } from "@/app/data/coaches";
+import { getCoachById } from "@/app/data/utils";
 import { CourseCard } from "@/components/course-card";
 import { ServiceCard } from "@/components/service-card";
 import { ProductCard } from "@/components/product-card";

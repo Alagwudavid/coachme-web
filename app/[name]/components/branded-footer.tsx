@@ -4,7 +4,7 @@ import { Copyright } from "lucide-react";
 import Link from "next/link";
 import Image from "next/image";
 import { useParams } from "next/navigation";
-import { getCoachBySlug } from "@/app/coachme/data/utils";
+import { getCoachBySlug } from "@/app/data/utils";
 import appLogo from "@/public/icon.png";
 
 export default function BrandedFooter() {

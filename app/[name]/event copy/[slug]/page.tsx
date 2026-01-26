@@ -1,9 +1,9 @@
 "use client";
 
 import { useParams, useRouter } from "next/navigation";
-import { getCoachBySlug } from "@/app/coachme/data/utils";
-import { events, type Event } from "@/app/coachme/data/events";
-import { getCoachById } from "@/app/coachme/data/utils";
+import { getCoachBySlug } from "@/app/data/utils";
+import { events, type Event } from "@/app/data/events";
+import { getCoachById } from "@/app/data/utils";
 import {
   ArrowLeft,
   Play,
