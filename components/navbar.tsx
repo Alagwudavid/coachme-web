@@ -381,7 +381,7 @@ export default function Navbar() {
         <div className="flex items-center justify-between gap-4 h-16">
           {/* Logo */}
           <Link href="/coachme" className="flex items-center gap-2 select-none">
-            <div className="w-8 h-8 rounded-lg overflow-hidden bg-muted flex items-center justify-center relative">
+            <div className="w-10 h-10 rounded-lg overflow-hidden bg-muted flex items-center justify-center relative">
               <Image
                 src={appLogo}
                 alt="app logo"
@@ -389,9 +389,9 @@ export default function Navbar() {
                 className="object-cover"
               />
             </div>
-            <span className="text-lg lg:text-xl font-bold font-mono">
+            {/* <span className="text-lg lg:text-xl font-bold font-mono">
               coachme
-            </span>
+            </span> */}
           </Link>
           <div className="w-full flex-1 lg: px-4">
             <div className="hidden lg:flex items-center gap-2">
@@ -407,28 +407,10 @@ export default function Navbar() {
                   />
                 </button>
                 {isDiscoverOpen && (
-                  <div className="absolute left-0 mt-2 w-[500px] bg-background rounded-2xl border shadow-lg overflow-hidden z-50">
-                    <div className="p-4">
-                      <div className="flex items-center gap-2 mb-4 text-base text-muted-foreground">
-                        <svg
-                          xmlns="http://www.w3.org/2000/svg"
-                          width={24}
-                          height={24}
-                          viewBox="0 0 14 14"
-                        >
-                          <path
-                            fill="currentColor"
-                            fillRule="evenodd"
-                            d="M3.173 0c-.508 0-1 .046-1.462.098A1.84 1.84 0 0 0 .09 1.723A14 14 0 0 0 0 3.174c0 .504.043.992.092 1.452a1.84 1.84 0 0 0 1.62 1.625c.462.051.954.098 1.462.098q.172 0 .34-.007a5 5 0 0 1 1.115-1.72A5 5 0 0 1 6.342 3.51q.006-.166.006-.336a14 14 0 0 0-.093-1.451A1.84 1.84 0 0 0 4.634.098A13 13 0 0 0 3.174 0m0 7.62q-.087.564-.086 1.15c0 1.563.446 3.051 1.54 4.146q.381.38.82.658a1.8 1.8 0 0 1-.812.297c-.462.051-.954.098-1.462.098s-1-.047-1.462-.098a1.84 1.84 0 0 1-1.62-1.625c-.05-.46-.092-.948-.092-1.452s.043-.992.092-1.451a1.84 1.84 0 0 1 1.62-1.625c.462-.051.954-.098 1.462-.098m10.702-2.994a1.8 1.8 0 0 1-.296.815a5 5 0 0 0-.658-.819c-1.095-1.094-2.582-1.54-4.147-1.54q-.588 0-1.155.087c0-.502.043-.988.092-1.446A1.84 1.84 0 0 1 9.331.098C9.793.046 10.285 0 10.793 0s1 .046 1.462.098a1.84 1.84 0 0 1 1.62 1.625c.049.46.092.948.092 1.451s-.043.992-.092 1.452M6.395 6.39c-.499.5-.808 1.274-.808 2.38c0 1.104.31 1.879.808 2.378c.5.5 1.275.808 2.38.808s1.88-.309 2.378-.808c.5-.5.808-1.274.808-2.379s-.308-1.88-.808-2.379c-.499-.5-1.274-.808-2.379-.808s-1.88.309-2.379.808m-.883-.884c.796-.797 1.928-1.174 3.262-1.174s2.467.377 3.263 1.174c.797.797 1.174 1.928 1.174 3.263c0 1.087-.25 2.038-.772 2.785l1.38 1.379a.625.625 0 1 1-.885.884l-1.38-1.38c-.745.52-1.695.77-2.78.77c-1.334 0-2.466-.378-3.262-1.175c-.797-.797-1.175-1.928-1.175-3.263s.378-2.466 1.175-3.263"
-                            clipRule="evenodd"
-                          ></path>
-                        </svg>
-                        <span className="font-medium">
-                          Browse popular category
-                        </span>
-                      </div>
-                      <div className="grid grid-cols-2 gap-6">
-                        <div className="space-y-2">
+                  <div className="absolute left-0 mt-2 w-80 h-auto overflow-y-auto custom-scrollbar bg-background rounded-2xl border shadow-lg overflow-hidden z-50">
+                      <div className="flex flex-col gap-4 ">
+                      <div className="p-4">
+                        <div className="space-y-2 pb-4">
                           {discoverCategories.leftColumn.map((item) => (
                             <Link
                               key={item.label}
@@ -440,6 +422,11 @@ export default function Navbar() {
                               <span className="text-sm">{item.label}</span>
                             </Link>
                           ))}
+                        </div>
+                        <div className="flex items-center gap-2 mb-4 text-base text-muted-foreground">
+                          <span className="font-medium">
+                            Browse popular category
+                          </span>
                         </div>
                         <div className="space-y-2">
                           {discoverCategories.rightColumn.map((item) => (
