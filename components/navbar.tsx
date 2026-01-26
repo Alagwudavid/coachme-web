@@ -240,6 +240,12 @@ const PhotographyIcon = (props: React.SVGProps<SVGSVGElement>) => {
   );
 };
 
+const CourseIcon = (props: React.SVGProps<SVGSVGElement>) => {
+  return (
+    <svg {...props} xmlns="http://www.w3.org/2000/svg" width={24} height={24} viewBox="0 0 24 24"><g fill="none" stroke="currentColor" strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5}><path d="M20 15c0 1.864 0 2.796-.304 3.53a4 4 0 0 1-2.165 2.165C16.796 21 15.864 21 14 21h-3c-3.772 0-5.658 0-6.83-1.172C3 18.657 3 16.771 3 13V7a4 4 0 0 1 4-4"></path><path d="m10 8.5l.434 3.969a.94.94 0 0 0 .552.753c.686.295 1.971.778 3.014.778s2.328-.483 3.014-.778a.94.94 0 0 0 .553-.753L18 8.5m2.5-1v3.77M14 4L7 7l7 3l7-3z"></path></g></svg>
+  )
+}
+
 export default function Navbar() {
   const [isProfileOpen, setIsProfileOpen] = useState(false);
   const [selectedCurrency, setSelectedCurrency] = useState("USD");
@@ -265,14 +271,9 @@ export default function Navbar() {
         href: "/discover/products",
       },
       {
-        icon: <TicketIcon className="w-5 h-5" />,
-        label: "Events",
+        icon: <CourseIcon className="w-5 h-5" />,
+        label: "Classes",
         href: "/discover/events",
-      },
-      {
-        icon: <ServiceIcon className="w-5 h-5" />,
-        label: "Services",
-        href: "/discover/services",
       },
       {
         icon: <CoachIcon className="w-5 h-5" />,
@@ -419,7 +420,7 @@ export default function Navbar() {
                   <div className="absolute left-0 mt-2 w-80 h-auto overflow-y-auto custom-scrollbar bg-background rounded-2xl border shadow-lg overflow-hidden z-50">
                     <div className="flex flex-col gap-4 ">
                       <div className="p-4">
-                        <div className="space-y-2 pb-4">
+                        <div className="space-y-1 pb-4">
                           {discoverCategories.leftColumn.map((item) => (
                             <Link
                               key={item.label}
@@ -427,8 +428,8 @@ export default function Navbar() {
                               onClick={() => setIsDiscoverOpen(false)}
                               className="flex items-center gap-3 py-1.5 hover:text-primary transition-colors"
                             >
-                              {item.icon}
-                              <span className="text-sm">{item.label}</span>
+                              {/* {item.icon} */}
+                              <span className="text-base font-semibold">{item.label}</span>
                             </Link>
                           ))}
                         </div>

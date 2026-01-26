@@ -84,7 +84,7 @@ function HomePage() {
               Popular Products
             </h2>
             <Link
-              href="/coachme/discover/products"
+              href="/discover/products"
               className="flex items-center gap-2 text-primary hover:underline"
             >
               View All <ArrowRight className="w-4 h-4" />
@@ -116,7 +116,7 @@ function HomePage() {
               Popular Courses
             </h2>
             <Link
-              href="/coachme/discover/events"
+              href="/discover/events"
               className="flex items-center gap-2 text-primary hover:underline"
             >
               View All <ArrowRight className="w-4 h-4" />
@@ -148,7 +148,7 @@ function HomePage() {
               Popular Services
             </h2>
             <Link
-              href="/coachme/discover/services"
+              href="/discover/services"
               className="flex items-center gap-2 text-primary hover:underline"
             >
               View All <ArrowRight className="w-4 h-4" />
@@ -180,7 +180,7 @@ function HomePage() {
               Popular Coaches
             </h2>
             <Link
-              href="/coachme/discover/creator"
+              href="/discover/creator"
               className="flex items-center gap-2 text-primary hover:underline"
             >
               View All <ArrowRight className="w-4 h-4" />

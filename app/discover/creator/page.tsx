@@ -37,7 +37,7 @@ export default function CreatorsPage() {
         {coaches.map((coach) => (
           <Link
             key={coach.id}
-            href={`/${coach.slug}/home`}
+            href={`/${coach.slug}/`}
             className="relative h-80 rounded-2xl overflow-hidden cursor-pointer group block"
             style={{
               backgroundImage: `url(${coach.image})`,
