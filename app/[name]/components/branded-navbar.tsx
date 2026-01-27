@@ -81,14 +81,14 @@ export default function BrandedNavbar() {
           {/* Desktop Right Section - SearchBar, Currency, Menu Items */}
           <div className="flex items-center justify-end gap-2">
             <div className="flex items-center gap-4">
-              <Tooltip label="Language & Currency" position="bottom">
-                <button className="flex items-center p-2 text-base font-medium text-foreground rounded-lg border hover:bg-muted/80 transition-colors cursor-pointer">
-                  <Globe className="w-5 h-5" />
+              <Tooltip label="Inbox" position="bottom">
+                <button className="flex items-center p-2 text-base font-medium text-foreground rounded-lg hover:bg-muted/80 transition-colors cursor-pointer">
+                  <svg xmlns="http://www.w3.org/2000/svg" className="w-6 h-6" width={24} height={24} viewBox="0 0 24 24"><path fill="none" stroke="currentColor" strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M8 9h8m-8 4h6m4-9a3 3 0 0 1 3 3v8a3 3 0 0 1-3 3h-5l-5 3v-3H6a3 3 0 0 1-3-3V7a3 3 0 0 1 3-3z"></path></svg>
                 </button>
               </Tooltip>
-              <Tooltip label="Shopping Cart" position="bottom">
-                <button className="flex items-center p-2 text-base font-medium text-foreground rounded-full hover:bg-muted/80 transition-colors cursor-pointer">
-                  <ShoppingCart className="w-5 h-5" />
+              <Tooltip label="Notifications" position="bottom">
+                <button className="flex items-center p-2 text-base font-medium text-foreground rounded-lg hover:bg-muted/80 transition-colors cursor-pointer">
+                  <svg xmlns="http://www.w3.org/2000/svg" className="w-6 h-6" width={24} height={24} viewBox="0 0 24 24"><path fill="currentColor" fillRule="evenodd" d="M12 1.25A7.75 7.75 0 0 0 4.25 9v.704a3.53 3.53 0 0 1-.593 1.958L2.51 13.385c-1.334 2-.316 4.718 2.003 5.35q1.133.309 2.284.523l.002.005C7.567 21.315 9.622 22.75 12 22.75s4.433-1.435 5.202-3.487l.002-.005a29 29 0 0 0 2.284-.523c2.319-.632 3.337-3.35 2.003-5.35l-1.148-1.723a3.53 3.53 0 0 1-.593-1.958V9A7.75 7.75 0 0 0 12 1.25m3.376 18.287a28.5 28.5 0 0 1-6.753 0c.711 1.021 1.948 1.713 3.377 1.713s2.665-.692 3.376-1.713M5.75 9a6.25 6.25 0 1 1 12.5 0v.704c0 .993.294 1.964.845 2.79l1.148 1.723a2.02 2.02 0 0 1-1.15 3.071a26.96 26.96 0 0 1-14.187 0a2.02 2.02 0 0 1-1.15-3.07l1.15-1.724a5.03 5.03 0 0 0 .844-2.79z" clipRule="evenodd"></path></svg>
                 </button>
               </Tooltip>
               {/* Profile Dropdown */}
@@ -97,10 +97,10 @@ export default function BrandedNavbar() {
                   onClick={() => setIsProfileOpen(!isProfileOpen)}
                   className="flex items-center p-2 text-base font-medium bg-muted text-muted-foreground rounded-full hover:bg-muted/90 transition-colors cursor-pointer"
                 >
-                  <User className="w-5 h-5" />
+                  <User className="w-6 h-6" />
                 </button>
                 {isProfileOpen && (
-                  <div className="absolute right-0 mt-2 w-80 bg-background rounded-3xl border shadow-lg overflow-hidden z-50">
+                  <div className="absolute right-0 mt-2 w-80 bg-background rounded-3xl border shadow-lg overflow-hidden" style={{zIndex: 60}}>
                     <div className="p-4">
                       {/* Profile Header */}
                       <div className="flex flex-row items-center gap-3 mb-6">
@@ -180,6 +180,14 @@ export default function BrandedNavbar() {
                             </g>
                           </svg>
                           <span>My learning</span>
+                        </Link>
+                        <Link
+                          href="/dashboard"
+                          onClick={() => setIsProfileOpen(false)}
+                          className="flex items-center gap-3 px-3 py-2.5 rounded-lg hover:bg-muted transition-colors"
+                        >
+                          <svg xmlns="http://www.w3.org/2000/svg" className="w-5 h-5" width={24} height={24} viewBox="0 0 24 24"><path fill="none" stroke="currentColor" strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M16.5 21a1.5 1.5 0 1 0 0-3a1.5 1.5 0 0 0 0 3m-8 0a1.5 1.5 0 1 0 0-3a1.5 1.5 0 0 0 0 3M3.71 5.4h15.214c1.378 0 2.373 1.27 1.995 2.548l-1.654 5.6C19.01 14.408 18.196 15 17.27 15H8.112c-.927 0-1.742-.593-1.996-1.452zm0 0L3 3"></path></svg>
+                          <span>Cart</span>
                         </Link>
                         <Link
                           href="/dashboard"

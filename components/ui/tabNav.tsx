@@ -159,8 +159,8 @@ export function TabNav({ tabs, moreItems, className }: TabNavProps) {
                                         : 'text-muted-foreground hover:text-foreground'
                                 )}
                             >
-                                More
-                                <ChevronDown className={cn('w-4 h-4 transition-transform', showMoreMenu && 'rotate-180')} />
+                                <svg xmlns="http://www.w3.org/2000/svg" className='w-4 h-4' width={24} height={24} viewBox="0 0 24 24"><path fill="currentColor" d="M5 10c-1.1 0-2 .9-2 2s.9 2 2 2s2-.9 2-2s-.9-2-2-2m14 0c-1.1 0-2 .9-2 2s.9 2 2 2s2-.9 2-2s-.9-2-2-2m-7 0c-1.1 0-2 .9-2 2s.9 2 2 2s2-.9 2-2s-.9-2-2-2"></path></svg>
+                                {/* <ChevronDown className={cn('w-4 h-4 transition-transform', showMoreMenu && 'rotate-180')} /> */}
                             </button>
 
                             {/* Dropdown Menu Portal */}

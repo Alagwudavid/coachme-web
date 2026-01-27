@@ -22,7 +22,19 @@ export default function CoachLayout({
   }
 
   const tabs = [
-    { id: "shop", label: "Shop", href: `/${coachSlug}/shop` },
+    {
+      id: "shop",
+      label: "Shop",
+      href: `/${coachSlug}/shop`,
+      isTabActive: (pathname: string) => {
+        // Active when on /shop or on the root coach page
+        return (
+          pathname === `/${coachSlug}/shop` ||
+          pathname === `/${coachSlug}` ||
+          pathname === `/${coachSlug}/`
+        );
+      },
+    },
     {
       id: "community",
       label: "Community",
@@ -56,9 +68,9 @@ export default function CoachLayout({
               {/* Navigation Tabs */}
               <TabNav tabs={tabs} />
               {/* <div className="grid lg:grid-cols-3"> */}
-                {/* Tab Content */}
-                <div className="min-h-screen col-span-2">{children}</div>
-                {/* <Rightbar className="p-4 md:p-6 col-span-1" /> */}
+              {/* Tab Content */}
+              <div className="min-h-screen col-span-2">{children}</div>
+              {/* <Rightbar className="p-4 md:p-6 col-span-1" /> */}
               {/* </div> */}
             </main>
           </div>
