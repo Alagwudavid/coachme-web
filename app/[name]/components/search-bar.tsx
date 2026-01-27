@@ -8,13 +8,15 @@ interface SearchBarProps {
     placeholder?: string;
     showShortcut?: boolean;
     onSearch?: (query: string) => void;
+    className?: string;
 }
 
 export default function SearchBar({
     maxWidth = 'max-w-xl',
     placeholder = 'Search',
     showShortcut = true,
-    onSearch
+    onSearch,
+    className = '',
 }: SearchBarProps) {
     const [searchQuery, setSearchQuery] = useState('');
 
@@ -25,7 +27,7 @@ export default function SearchBar({
     };
 
     return (
-        <div className={`flex-1 ${maxWidth}`}>
+        <div className={`flex-1 ${maxWidth} ${className}`}>
             <div className="relative">
                 <Search className="absolute left-3 top-1/2 transform -translate-y-1/2 text-gray-400 w-5 h-5" />
                 <input

@@ -110,9 +110,9 @@ export function TabNav({ tabs, moreItems, className }: TabNavProps) {
     };
 
     return (
-        <div className={cn('sticky top-0 bg-background z-50', className)}>
+        <div className={cn('sticky top-0 bg-background z-50 w-full', className)}>
             <div className="border-b">
-                <nav className="-mb-px px-2 flex space-x-4 overflow-x-auto hide-scrollbar relative" aria-label="Tabs">
+                <nav className="-mb-px px-2 flex space-x-4 overflow-x-auto hide-scrollbar relative max-w-7xl mx-auto" aria-label="Tabs">
                     {tabs.map((tab, index) => {
                         const isActive = pathname === tab.href;
                         return (

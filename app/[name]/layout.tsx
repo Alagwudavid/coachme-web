@@ -6,6 +6,7 @@ import BrandedNavbar from "./components/branded-navbar";
 import BrandedFooter from "./components/branded-footer";
 import { TabRouteProvider } from "./components/tab-route-context";
 import { TabNav } from "@/components/ui/tab-nav";
+import Rightbar from "./components/rightbar";
 
 export default function CoachLayout({
   children,
@@ -22,6 +23,11 @@ export default function CoachLayout({
 
   const tabs = [
     { id: "shop", label: "Shop", href: `/${coachSlug}/shop` },
+    {
+      id: "community",
+      label: "Community",
+      href: `/${coachSlug}/community`,
+    },
     {
       id: "classroom",
       label: "Classroom",
@@ -46,12 +52,14 @@ export default function CoachLayout({
         <BrandedNavbar />
         <div className="min-h-screen">
           <div className="min-h-page w-full flex flex-col mx-auto">
-            <main className="max-w-7xl w-full mx-auto flex flex-col">
+            <main className="w-full mx-auto flex flex-col">
               {/* Navigation Tabs */}
               <TabNav tabs={tabs} />
-
-              {/* Tab Content */}
-              <div className="p-4 md:p-6 lg:p-8 min-h-screen">{children}</div>
+              {/* <div className="grid lg:grid-cols-3"> */}
+                {/* Tab Content */}
+                <div className="min-h-screen col-span-2">{children}</div>
+                {/* <Rightbar className="p-4 md:p-6 col-span-1" /> */}
+              {/* </div> */}
             </main>
           </div>
           <BrandedFooter />

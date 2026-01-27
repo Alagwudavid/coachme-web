@@ -19,7 +19,7 @@ import {
 } from "lucide-react";
 import Image from "next/image";
 import { Button } from "@/components/ui/button";
-import sessionManagement from "@/public/session-management.png";
+import sessionManagement from "@/public/booking-gif.gif";
 import seoDiscoveryBg from "@/public/seo-discovery.png";
 import AllInOneBg from "@/public/all-in-one.png";
 import PreviewPageBg from "@/public/shop-discover.jpg";
@@ -38,14 +38,14 @@ export function FeaturesGridSection() {
           Everything you need to sell, teach, and scale.
         </h2>
       </div>
-      <div className="max-w-7xl h-[400px] md:h-[600px] mx-auto rounded-2xl overflow-hidden relative group cursor-pointer mb-4 md:mb-8">
+      {/* <div className="max-w-7xl h-[400px] md:h-[600px] mx-auto rounded-2xl overflow-hidden relative group cursor-pointer mb-4 md:mb-8">
         <Image
           src={PreviewPageBgSrc}
           alt="Landing BG"
           fill
           className="object-cover"
         />
-      </div>
+      </div> */}
       {/* Grid Layout */}
       <div className="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 lg:gap-8">
         {/* Column 1 - Desktop Management */}
@@ -87,7 +87,7 @@ export function FeaturesGridSection() {
         {/* Column 3 - Mobile Management */}
         <div className="bg-foreground rounded-3xl flex flex-col justify-between min-h-[500px] lg:min-h-[600px] overflow-hidden relative">
           <div
-            className="rounded-3xl w-full min-h-[320px] bg-gradient-to-br from-indigo-900/50 to-purple-900/50 overflow-hidden relative flex items-center justify-center bg-cover bg-no-repeat"
+            className="rounded-3xl w-full min-h-80 bg-gradient-to-br from-indigo-900/50 to-purple-900/50 overflow-hidden relative flex items-center justify-center bg-cover bg-no-repeat"
             style={{ backgroundImage: `url("${sessionManagementSrc}")` }}
           ></div>
           <div className="p-6 lg:px-4">

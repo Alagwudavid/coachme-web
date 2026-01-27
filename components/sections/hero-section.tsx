@@ -9,7 +9,7 @@ import landingBg from "@/public/0b40a8bcfe3efb57abcff206bc5a1cd0.jpg";
 import AllInOneBg from "@/public/all-in-one.png";
 import AllInOnePlaceBg from "@/public/all-in-one-place.png";
 import AnalyticsBg from "@/public/analytics.jpg";
-import Consult247Bg from "@/public/booking-gif.gif";
+import MembershipAssetBg from "@/public/access-web-assets-under-simple-subscription.png";
 import PreviewPageBg from "@/public/page_preview_tablet.png";
 import membershipBg from "@/public/membership.png";
 
@@ -55,7 +55,7 @@ export function HeroSection() {
   const AllInOneBgSrc = AllInOneBg.src || AllInOneBg;
   const AllInOnePlaceBgSrc = AllInOnePlaceBg.src || AllInOnePlaceBg;
   const AnalyticsSrc = AnalyticsBg.src || AnalyticsBg;
-  const Consult247BgSrc = Consult247Bg.src || Consult247Bg;
+  const MembershipAssetBgSrc = MembershipAssetBg.src || MembershipAssetBg;
   const PreviewPageBgSrc = PreviewPageBg.src || PreviewPageBg;
   const membershipBgSrc = membershipBg.src || membershipBg;
 
@@ -157,18 +157,17 @@ export function HeroSection() {
           </div>
           <div className="rounded-2xl border overflow-hidden relative group cursor-pointer">
             <Image
-              src={Consult247BgSrc}
+              src={MembershipAssetBgSrc}
               alt="Landing BG"
               fill
               className="object-cover group-hover:scale-105 transition-transform duration-500 ease-out"
             />
             <div className="absolute bottom-0 left-0 right-0 h-3/5 bg-gradient-to-t from-black via-black/80 to-transparent translate-y-0 transition-transform duration-500 ease-out flex flex-col justify-end p-2 lg:p-4">
               <h3 className="text-white font-semibold text-xs lg:text-lg mb-0.5 lg:mb-1 drop-shadow-lg">
-                Manage bookings
+                Membership
               </h3>
               <p className="text-white/90 text-[10px] lg:text-xs drop-shadow-md hidden lg:block">
-                Let clients book coaching, consulting, or mentoring sessions
-                directly from your page - no back-and-forth.
+                Create private spaces where your audience can connect, learn, and stay subscribed to you.
               </p>
             </div>
           </div>
