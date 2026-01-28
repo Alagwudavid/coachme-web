@@ -86,10 +86,10 @@ function ShopPage() {
                         onClick={() =>
                           router.push(`/${coachSlug}/product/${product.slug}`)
                         }
-                        className="bg-card overflow-hidden rounded-lg hover:shadow-lg transition-all cursor-pointer group"
+                        className="bg-card overflow-hidden p-2 rounded-2xl hover:shadow-lg transition-all cursor-pointer group space-y-3"
                       >
                         {/* Product Image */}
-                        <div className="relative bg-muted overflow-hidden">
+                        <div className="relative rounded-2xl bg-muted overflow-hidden">
                           <img
                             src={product.image}
                             alt={product.title}
@@ -103,7 +103,7 @@ function ShopPage() {
                         </div>
 
                         {/* Product Info */}
-                        <div className="space-y-2 p-4">
+                        <div className="space-y-2">
                           {/* Title */}
                           <h4 className="font-semibold text-foreground text-lg line-clamp-2 group-hover:text-primary transition-colors">
                             {product.title}

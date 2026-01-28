@@ -26,65 +26,67 @@ function ClassroomPage() {
         );
 
   return (
-    <div className="space-y-6">
-      {/* Category Filter */}
-      <div className="flex gap-2 overflow-x-auto scrollbar-hide pb-2">
-        {courseCategories.slice(0, 8).map((category) => (
-          <button
-            key={category.id}
-            onClick={() => setSelectedCategory(category.id)}
-            className={`px-4 py-2 rounded-full whitespace-nowrap font-medium transition-colors ${
-              selectedCategory === category.id
-                ? "bg-primary text-primary-foreground"
-                : "bg-muted hover:bg-muted/80 text-foreground"
-            }`}
-          >
-            <span className="mr-2">{category.emoji}</span>
-            {category.name}
-          </button>
-        ))}
-      </div>
-
-      {/* Courses Grid */}
-      {filteredCourses.length > 0 ? (
-        <div className="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-4 gap-6">
-          {filteredCourses.map((course) => (
-            <CourseCard
-              key={course.id}
-              courseItem={course}
-              onClick={() =>
-                router.push(`/${coachSlug}/classroom/${course.slug}`)
-              }
-            />
+    <section className="py-8 px-4 md:px-8 lg:px-12 w-full bg-muted min-h-screen">
+      <div className="space-y-6 max-w-7xl mx-auto">
+        {/* Category Filter */}
+        <div className="flex gap-2 overflow-x-auto scrollbar-hide pb-2">
+          {courseCategories.slice(0, 8).map((category) => (
+            <button
+              key={category.id}
+              onClick={() => setSelectedCategory(category.id)}
+              className={`px-4 py-2 rounded-full whitespace-nowrap font-medium transition-colors ${
+                selectedCategory === category.id
+                  ? "bg-primary text-primary-foreground"
+                  : "bg-muted hover:bg-muted/80 text-foreground"
+              }`}
+            >
+              <span className="mr-2">{category.emoji}</span>
+              {category.name}
+            </button>
           ))}
         </div>
-      ) : (
-        <div className="text-center py-12">
-          <div className="mb-4 text-center w-full flex justify-center">
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              className="size-20 text-muted-foreground"
-              width={24}
-              height={24}
-              viewBox="0 0 24 24"
-            >
-              <path
-                fill="currentColor"
-                d="M7.333 5.5a2.25 2.25 0 0 1 2.25-2.25h1.583a2.25 2.25 0 0 1 2.25 2.196c.227-.175.492-.308.786-.387l2.253-.604a2.25 2.25 0 0 1 2.756 1.591L21.93 16.19a2.25 2.25 0 0 1-1.591 2.755l-2.254.604a2.25 2.25 0 0 1-2.756-1.59l-1.912-7.136v6.428a2.25 2.25 0 0 1-2.25 2.25H9.583a2.24 2.24 0 0 1-1.5-.573a2.24 2.24 0 0 1-1.5.573H4.25A2.25 2.25 0 0 1 2 17.25v-9.5A2.25 2.25 0 0 1 4.25 5.5h2.333c.263 0 .516.045.75.128zm0 11.75V7.728A.75.75 0 0 0 6.583 7H4.25a.75.75 0 0 0-.75.75v9.5c0 .414.336.75.75.75h2.333a.75.75 0 0 0 .75-.73zm2.25.75h1.583a.75.75 0 0 0 .75-.75V5.5a.75.75 0 0 0-.75-.75H9.583a.75.75 0 0 0-.75.75v11.77a.75.75 0 0 0 .75.73M14.06 7.427l2.717 10.142a.75.75 0 0 0 .919.53l2.253-.604a.75.75 0 0 0 .53-.918L17.763 6.435a.75.75 0 0 0-.918-.53l-2.254.603a.75.75 0 0 0-.53.919"
-              ></path>
-            </svg>
+
+        {/* Courses Grid */}
+        {filteredCourses.length > 0 ? (
+          <div className="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-4 gap-6">
+            {filteredCourses.map((course) => (
+              <CourseCard
+                key={course.id}
+                courseItem={course}
+                onClick={() =>
+                  router.push(`/${coachSlug}/classroom/${course.slug}`)
+                }
+              />
+            ))}
           </div>
-          <h3 className="text-xl font-semibold text-foreground mb-2">
-            No Courses Available
-          </h3>
-          <p className="text-muted-foreground">
-            {selectedCategory === "all"
-              ? `${coach?.name || "This coach"} hasn't created any courses yet.`
-              : "No courses found in this category. Try selecting a different category."}
-          </p>
-        </div>
-      )}
-    </div>
+        ) : (
+          <div className="text-center py-12">
+            <div className="mb-4 text-center w-full flex justify-center">
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                className="size-20 text-muted-foreground"
+                width={24}
+                height={24}
+                viewBox="0 0 24 24"
+              >
+                <path
+                  fill="currentColor"
+                  d="M7.333 5.5a2.25 2.25 0 0 1 2.25-2.25h1.583a2.25 2.25 0 0 1 2.25 2.196c.227-.175.492-.308.786-.387l2.253-.604a2.25 2.25 0 0 1 2.756 1.591L21.93 16.19a2.25 2.25 0 0 1-1.591 2.755l-2.254.604a2.25 2.25 0 0 1-2.756-1.59l-1.912-7.136v6.428a2.25 2.25 0 0 1-2.25 2.25H9.583a2.24 2.24 0 0 1-1.5-.573a2.24 2.24 0 0 1-1.5.573H4.25A2.25 2.25 0 0 1 2 17.25v-9.5A2.25 2.25 0 0 1 4.25 5.5h2.333c.263 0 .516.045.75.128zm0 11.75V7.728A.75.75 0 0 0 6.583 7H4.25a.75.75 0 0 0-.75.75v9.5c0 .414.336.75.75.75h2.333a.75.75 0 0 0 .75-.73zm2.25.75h1.583a.75.75 0 0 0 .75-.75V5.5a.75.75 0 0 0-.75-.75H9.583a.75.75 0 0 0-.75.75v11.77a.75.75 0 0 0 .75.73M14.06 7.427l2.717 10.142a.75.75 0 0 0 .919.53l2.253-.604a.75.75 0 0 0 .53-.918L17.763 6.435a.75.75 0 0 0-.918-.53l-2.254.603a.75.75 0 0 0-.53.919"
+                ></path>
+              </svg>
+            </div>
+            <h3 className="text-xl font-semibold text-foreground mb-2">
+              No Courses Available
+            </h3>
+            <p className="text-muted-foreground">
+              {selectedCategory === "all"
+                ? `${coach?.name || "This coach"} hasn't created any courses yet.`
+                : "No courses found in this category. Try selecting a different category."}
+            </p>
+          </div>
+        )}
+      </div>
+    </section>
   );
 }
 

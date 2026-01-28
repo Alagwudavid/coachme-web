@@ -101,7 +101,7 @@ export const CourseCard = ({ courseItem, onClick }: CourseCardProps) => {
           {/* Range Info - Progress/Enrollment Indicator */}
           {courseItem.duration && (
             <div className="flex items-center gap-2 mt-1">
-              <div className="flex-1 h-2.5 bg-muted rounded-full overflow-hidden">
+              <div className="flex-1 h-1.5 bg-muted rounded-full overflow-hidden">
                 <div
                   className="h-full bg-primary rounded-full transition-all duration-300"
                   style={{
