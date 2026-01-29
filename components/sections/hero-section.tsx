@@ -167,7 +167,7 @@ export function HeroSection() {
                 Membership
               </h3>
               <p className="text-white/90 text-[10px] lg:text-xs drop-shadow-md hidden lg:block">
-                Create private spaces where your audience can connect, learn, and stay subscribed to you.
+                Offer community spaces where your audience can connect, learn, and stay subscribed to you.
               </p>
             </div>
           </div>
