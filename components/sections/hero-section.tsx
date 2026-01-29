@@ -130,7 +130,7 @@ export function HeroSection() {
             />
             <div className="absolute bottom-0 left-0 right-0 h-3/5 bg-gradient-to-t from-black via-black/80 to-transparent translate-y-0 transition-transform duration-500 ease-out flex flex-col justify-end p-2 lg:p-4">
               <h3 className="text-white font-semibold text-sm lg:text-xl mb-1 lg:mb-2 drop-shadow-lg">
-                Live classes
+                Sessions
               </h3>
               <p className="text-white/90 text-xs lg:text-sm drop-shadow-md hidden lg:block">
                 Host interactive sessions, teach in real time, and connect
