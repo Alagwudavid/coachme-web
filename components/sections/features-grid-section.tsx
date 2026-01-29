@@ -24,8 +24,8 @@ import seoDiscoveryBg from "@/public/image_06.png";
 import AllInOneBg from "@/public/image_04.png";
 import PreviewPageBg from "@/public/shop-discover.jpg";
 import EngagingContentBg from "@/public/image_03.png";
-import CommunityImage from "@/public/image_02.png";
-import SpacesImage from "@/public/image_05.png";
+import MulticurrencyImage from "@/public/image_08.png";
+import BrandImage from "@/public/image_05.png";
 
 export function FeaturesGridSection() {
   const sessionManagementSrc = sessionManagement.src || sessionManagement;
@@ -33,8 +33,8 @@ export function FeaturesGridSection() {
   const AllInOneBgSrc = AllInOneBg.src || AllInOneBg;
   const PreviewPageBgSrc = PreviewPageBg.src || PreviewPageBg;
   const EngagingContentBgSrc = EngagingContentBg.src || EngagingContentBg;
-  const CommunityImageSrc = CommunityImage.src || CommunityImage;
-  const SpacesImageSrc = SpacesImage.src || SpacesImage;
+  const MulticurrencyImageSrc = MulticurrencyImage.src || MulticurrencyImage;
+  const BrandImageSrc = BrandImage.src || BrandImage;
   return (
     <section className="w-full min-h-page px-4 sm:px-6 lg:px-8 py-16 sm:py-20 bg-foreground text-background rounded-t-[52px]">
       <div className="text-start mb-12 sm:mb-16">
@@ -79,7 +79,7 @@ export function FeaturesGridSection() {
           ></div>
           <div className="p-6 lg:px-4">
             <h3 className="text-2xl lg:text-3xl font-semibold mb-4">
-              Search Discovery
+              SEO Discovery
             </h3>
             <p className="text-background text-base lg:text-lg mb-4">
               Stand out in search results without the heavy lifting. Boost your
@@ -97,15 +97,16 @@ export function FeaturesGridSection() {
           ></div>
           <div className="p-6 lg:px-4">
             <h3 className="text-2xl lg:text-3xl font-semibold mb-4">
-              Automated Calendar
+              Automated Booking
             </h3>
             <p className="text-background text-base lg:text-lg mb-4">
-              Host live Q&As, coaching sessions, or office hours alongside course content
+              Handle live sessions, coaching calls, and class registrations automatically with a
+              full-featured Calendar tool built for scale.
             </p>
           </div>
         </div>
 
-        {/* Column 4 - Leaderboard/Gamification */}
+        {/* Column 4 - Create */}
         <div className="bg-foreground rounded-3xl flex flex-col min-h-[500px] lg:min-h-[600px] overflow-hidden relative">
           <div
             className="rounded-3xl w-full min-h-80 bg-gradient-to-br from-indigo-900/50 to-purple-900/50 overflow-hidden relative flex items-center justify-center bg-cover bg-no-repeat bg-center"
@@ -113,42 +114,42 @@ export function FeaturesGridSection() {
           ></div>
           <div className="p-6 lg:px-4">
             <h3 className="text-2xl lg:text-3xl font-semibold mb-4">
-              Leaderboard & Gamification
+              Create
             </h3>
             <p className="text-background text-base lg:text-lg mb-4">
-              Leaderboards and challenges that drive motivation and accountability
+              Create customized and engaging content with our intuitive course builder.
             </p>
           </div>
         </div>
 
-        {/* Column 5 - Learning Spaces */}
+        {/* Column 5 - Brand */}
         <div className="bg-foreground rounded-3xl flex flex-col min-h-[500px] lg:min-h-[600px] overflow-hidden relative">
           <div
             className="rounded-3xl w-full min-h-80 bg-gradient-to-br from-indigo-900/50 to-purple-900/50 overflow-hidden relative flex items-center justify-center bg-cover bg-no-repeat"
-            style={{ backgroundImage: `url("${SpacesImageSrc}")` }}
+            style={{ backgroundImage: `url("${BrandImageSrc}")` }}
           ></div>
           <div className="p-6 lg:px-4">
             <h3 className="text-2xl lg:text-3xl font-semibold mb-4">
-              Spaces
+              Brand
             </h3>
             <p className="text-background text-base lg:text-lg mb-4">
-              Discussion spaces for each course, cohort, or learner group
+              Customize your brand to match your style and personality, creating a unique experience for your audience.
             </p>
           </div>
         </div>
 
-        {/* Column 6 - Community Management */}
+        {/* Column 6 - Multicurrency */}
         <div className="bg-foreground rounded-3xl flex flex-col min-h-[500px] lg:min-h-[600px] overflow-hidden relative">
           <div
             className="rounded-3xl w-full min-h-80 bg-gradient-to-br from-indigo-900/50 to-purple-900/50 overflow-hidden relative flex items-center justify-center bg-cover bg-no-repeat"
-            style={{ backgroundImage: `url("${CommunityImageSrc}")` }}
+            style={{ backgroundImage: `url("${MulticurrencyImageSrc}")` }}
           ></div>
           <div className="p-6 lg:px-4">
             <h3 className="text-2xl lg:text-3xl font-semibold mb-4">
-              Community
+              Multicurrency
             </h3>
             <p className="text-background text-base lg:text-lg mb-4">
-              Create community to posts and share your thoughts, ideas, and learnings.
+              Sell to a global audience with built-in multicurrency support, allowing customers to pay in their preferred currency.
             </p>
           </div>
         </div>
