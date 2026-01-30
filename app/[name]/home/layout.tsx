@@ -21,7 +21,7 @@ export default async function CoachLayout({
 
   return (
     <div className="relative bg-background min-h-screen">
-      <BrandedNavbar />
+      {/* <BrandedNavbar /> */}
       <div className="min-h-screen">
         <ClientLayoutWrapper coachSlug={coachSlug}>
           {children}

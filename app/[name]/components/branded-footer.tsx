@@ -13,15 +13,16 @@ export default function BrandedFooter() {
   const coach = getCoachBySlug(coachSlug);
   const currentYear = new Date().getFullYear();
   return (
-    <footer className="w-full bg-muted/70 p-4 sm:p-6 py-12 space-y-6">
+    <footer className="w-full bg-muted/70 p-4 sm:px-6 py-16 space-y-8 border-t">
       {/* Social Icons */}
-      <div className="max-w-5xl w-fit mx-auto flex gap-1 items-center justify-start flex-wrap">
+      <div className="max-w-5xl w-fit mx-auto flex gap-2 items-center justify-start flex-wrap">
         <a
           href="#"
-          className="w-8 h-8 rounded-lg text-primary hover:bg-primary/30 flex items-center justify-center transition-colors"
+          className="w-10 h-10 hover:text-muted-foreground  text-primary flex items-center justify-center transition-colors"
         >
           <svg
             xmlns="http://www.w3.org/2000/svg"
+            className="w-7 h-7"
             width={24}
             height={24}
             viewBox="0 0 24 24"
@@ -51,10 +52,11 @@ export default function BrandedFooter() {
         </a>
         <a
           href="#"
-          className="w-8 h-8 rounded-lg bg-background hover:bg-primary/30 flex items-center justify-center transition-colors"
+          className="w-10 h-10 hover:text-muted-foreground  flex items-center justify-center transition-colors"
         >
           <svg
             xmlns="http://www.w3.org/2000/svg"
+            className="w-7 h-7"
             width={24}
             height={24}
             viewBox="0 0 24 24"
@@ -67,10 +69,11 @@ export default function BrandedFooter() {
         </a>
         <a
           href="#"
-          className="w-8 h-8 rounded-lg bg-background hover:bg-primary/30 flex items-center justify-center transition-colors"
+          className="w-10 h-10 hover:text-muted-foreground  flex items-center justify-center transition-colors"
         >
           <svg
             xmlns="http://www.w3.org/2000/svg"
+            className="w-7 h-7"
             width={24}
             height={24}
             viewBox="0 0 24 24"
@@ -89,10 +92,11 @@ export default function BrandedFooter() {
         </a>
         <a
           href="#"
-          className="w-8 h-8 rounded-lg text-blue-500 hover:bg-primary/30 flex items-center justify-center transition-colors"
+          className="w-10 h-10 hover:text-muted-foreground  text-blue-500 flex items-center justify-center transition-colors"
         >
           <svg
             xmlns="http://www.w3.org/2000/svg"
+            className="w-7 h-7"
             width={24}
             height={24}
             viewBox="0 0 24 24"
@@ -113,10 +117,11 @@ export default function BrandedFooter() {
         </a>
         <a
           href="#"
-          className="w-8 h-8 rounded-lg text-pink-500 hover:bg-primary/30 flex items-center justify-center transition-colors"
+          className="w-10 h-10 hover:text-muted-foreground  text-pink-500 flex items-center justify-center transition-colors"
         >
           <svg
             xmlns="http://www.w3.org/2000/svg"
+            className="w-7 h-7"
             width={24}
             height={24}
             viewBox="0 0 24 24"
@@ -166,10 +171,11 @@ export default function BrandedFooter() {
         </a>
         <a
           href="#"
-          className="w-8 h-8 rounded-lg text-green-500 hover:bg-primary/30 flex items-center justify-center transition-colors"
+          className="w-10 h-10 hover:text-muted-foreground  text-green-500 flex items-center justify-center transition-colors"
         >
           <svg
             xmlns="http://www.w3.org/2000/svg"
+            className="w-7 h-7"
             width={24}
             height={24}
             viewBox="0 0 24 24"
@@ -212,7 +218,7 @@ export default function BrandedFooter() {
           </Link>
         </div>
         {/* Center Side - Copyright and Links */}
-        <div className="w-fit flex items-center flex-wrap gap-6 text-sm text-foreground">
+        <div className="w-fit flex items-center flex-wrap gap-6 text-base text-foreground">
           <span className="flex items-center">
             <Copyright className="w-4 h-4" />
             {currentYear}. {coach?.name || "Coach"}. All Rights Reserved
