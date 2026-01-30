@@ -12,7 +12,7 @@ interface SearchBarProps {
 
 export default function SearchBar({
     maxWidth = 'max-w-xl',
-    placeholder = 'Search for products, classes, creators',
+    placeholder = 'Search for products, services, creators',
     showShortcut = true,
     onSearch
 }: SearchBarProps) {

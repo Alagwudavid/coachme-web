@@ -51,27 +51,6 @@ function UserPage() {
     <>
       <div className="min-h-page container mx-auto flex">
         <main className="max-w-6xl mx-auto flex-1 flex flex-col space-y-6">
-          {/* Hero Section */}
-          {/* <div className="bg-background flex flex-col h-40 relative">
-                        <div className="w-full h-full flex items-center justify-center overflow-hidden rounded-2xl mb-6">
-                            <Image
-                                src={appBanner}
-                                alt="Community Banner Image"
-                                width={1240}
-                                height={120}
-                                className="object-cover"
-                            />
-                        </div>
-                        <div className="absolute -bottom-5 left-5 rounded-full overflow-hidden w-20 h-20 md:w-[150px] md:h-[150px] mx-auto border-4 border-background">
-                            <Image
-                                src={appLogo}
-                                alt="User profile image"
-                                width={150}
-                                height={150}
-                                className='rounded-full'
-                            />
-                        </div>
-                    </div> */}
           <div className="flex gap-6 flex-col md:flex-row md:rounded-2xl bg-muted/70 p-4 md:p-6 lg:p-8">
             {/* Left Section */}
             <div className="rounded-full overflow-hidden w-28 h-28 md:w-[150px] md:h-[150px] mx-auto">

@@ -43,6 +43,7 @@ import { usePathname } from "next/navigation";
 import SearchBar from "./search-bar";
 import appLogo from "@/public/icon.png";
 import Tooltip from "@/components/ui/tooltip";
+import { PreferenceModal } from "./PreferenceModal";
 
 const LogoIcon = (props: React.SVGProps<SVGSVGElement>) => (
   <svg
@@ -242,9 +243,26 @@ const PhotographyIcon = (props: React.SVGProps<SVGSVGElement>) => {
 
 const CourseIcon = (props: React.SVGProps<SVGSVGElement>) => {
   return (
-    <svg {...props} xmlns="http://www.w3.org/2000/svg" width={24} height={24} viewBox="0 0 24 24"><g fill="none" stroke="currentColor" strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5}><path d="M20 15c0 1.864 0 2.796-.304 3.53a4 4 0 0 1-2.165 2.165C16.796 21 15.864 21 14 21h-3c-3.772 0-5.658 0-6.83-1.172C3 18.657 3 16.771 3 13V7a4 4 0 0 1 4-4"></path><path d="m10 8.5l.434 3.969a.94.94 0 0 0 .552.753c.686.295 1.971.778 3.014.778s2.328-.483 3.014-.778a.94.94 0 0 0 .553-.753L18 8.5m2.5-1v3.77M14 4L7 7l7 3l7-3z"></path></g></svg>
-  )
-}
+    <svg
+      {...props}
+      xmlns="http://www.w3.org/2000/svg"
+      width={24}
+      height={24}
+      viewBox="0 0 24 24"
+    >
+      <g
+        fill="none"
+        stroke="currentColor"
+        strokeLinecap="round"
+        strokeLinejoin="round"
+        strokeWidth={1.5}
+      >
+        <path d="M20 15c0 1.864 0 2.796-.304 3.53a4 4 0 0 1-2.165 2.165C16.796 21 15.864 21 14 21h-3c-3.772 0-5.658 0-6.83-1.172C3 18.657 3 16.771 3 13V7a4 4 0 0 1 4-4"></path>
+        <path d="m10 8.5l.434 3.969a.94.94 0 0 0 .552.753c.686.295 1.971.778 3.014.778s2.328-.483 3.014-.778a.94.94 0 0 0 .553-.753L18 8.5m2.5-1v3.77M14 4L7 7l7 3l7-3z"></path>
+      </g>
+    </svg>
+  );
+};
 
 export default function Navbar() {
   const [isProfileOpen, setIsProfileOpen] = useState(false);
@@ -257,11 +275,13 @@ export default function Navbar() {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const [isMobileDiscoverOpen, setIsMobileDiscoverOpen] = useState(false);
   const [isMobileAboutOpen, setIsMobileAboutOpen] = useState(false);
+  const [isPreferenceFilterOpen, setIsPreferenceFilterOpen] = useState(false);
   const pathname = usePathname();
   const discoverRef = useRef<HTMLDivElement>(null);
   const aboutRef = useRef<HTMLDivElement>(null);
   const mobileMenuRef = useRef<HTMLDivElement>(null);
   const profileRef = useRef<HTMLDivElement>(null);
+  const preferenceFilterRef = useRef<HTMLDivElement>(null);
 
   const discoverCategories = {
     leftColumn: [
@@ -343,10 +363,9 @@ export default function Navbar() {
       { label: "How Coachme works", href: "/how-it-works" },
       { label: "Pricing", href: "/pricing" },
       { label: "Help Centre", href: "/help" },
-      { label: "Documentation", href: "/docs" },
     ],
     rightColumn: [
-      { label: "About Coachme", href: "/coachme#about-us" },
+      { label: "About Coachme", href: "/#about-us" },
       { label: "Blog", href: "/press" },
       { label: "Careers", href: "/careers" },
     ],
@@ -429,7 +448,9 @@ export default function Navbar() {
                               className="flex items-center gap-3 py-1.5 hover:text-primary transition-colors"
                             >
                               {/* {item.icon} */}
-                              <span className="text-base font-semibold">{item.label}</span>
+                              <span className="text-base font-semibold">
+                                {item.label}
+                              </span>
                             </Link>
                           ))}
                         </div>
@@ -512,34 +533,40 @@ export default function Navbar() {
 
           <div className="flex items-center gap-4">
             <Tooltip label="Language & Currency" position="bottom">
-              <button className="flex items-center p-2 text-base font-medium text-foreground rounded-lg border hover:bg-muted/80 transition-colors cursor-pointer">
+              <button
+                onClick={() => setIsPreferenceFilterOpen(true)}
+                className="flex items-center p-2 text-base font-medium text-foreground rounded-lg border hover:bg-muted/80 transition-colors cursor-pointer"
+              >
                 <Globe className="w-5 h-5" />
               </button>
             </Tooltip>
             <Tooltip label="Shopping Cart" position="bottom">
-              <button className="flex items-center p-2 text-base font-medium text-foreground rounded-full hover:bg-muted/80 transition-colors cursor-pointer">
+              <button className="flex items-center gap-2 p-2 text-base font-medium text-foreground rounded-full hover:bg-muted/80 transition-colors cursor-pointer">
                 <ShoppingCart className="w-5 h-5" />
+                2
               </button>
             </Tooltip>
             {/* Profile Dropdown */}
             <div ref={profileRef} className="relative">
-                <button
-                  onClick={() => setIsProfileOpen(!isProfileOpen)}
-                  className="flex items-center p-2 text-base font-medium bg-muted text-muted-foreground rounded-full hover:bg-muted/90 transition-colors cursor-pointer"
-                >
-                  <User className="w-5 h-5" />
-                </button>
+              <button
+                onClick={() => setIsProfileOpen(!isProfileOpen)}
+                className="flex items-center p-2 text-base font-medium bg-muted text-muted-foreground rounded-full hover:bg-muted/90 transition-colors cursor-pointer"
+              >
+                <User className="w-5 h-5" />
+              </button>
               {isProfileOpen && (
                 <div className="absolute right-0 mt-2 w-80 bg-background rounded-3xl border shadow-lg overflow-hidden z-50">
                   <div className="p-4">
                     {/* Profile Header */}
                     <div className="flex flex-row items-center gap-3 mb-6">
-                      <div className="w-15 h-15 bg-gradient-to-br from-blue-400 to-purple-500 rounded-full flex items-center justify-center">
-                        <User className="w-10 h-10 text-white" />
+                      <div className="w-15 h-15 bg-muted rounded-full flex items-center justify-center">
+                        <User className="w-10 h-10 text-foreground" />
                       </div>
                       <div className="flex flex-col">
                         <h3 className="font-semibold text-lg">Demo user</h3>
-                        <span className="font-semibold text-muted-foreground text-sm">example@email.com</span>
+                        <span className="font-semibold text-muted-foreground text-sm">
+                          example@email.com
+                        </span>
                       </div>
                     </div>
 
@@ -589,7 +616,24 @@ export default function Navbar() {
                         onClick={() => setIsProfileOpen(false)}
                         className="flex items-center gap-3 px-3 py-2.5 rounded-lg hover:bg-muted transition-colors"
                       >
-                        <svg xmlns="http://www.w3.org/2000/svg" className="w-5 h-5" width={24} height={24} viewBox="0 0 24 24"><g fill="none" stroke="currentColor" strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5}><path d="M14.217 3.5a5.17 5.17 0 0 0-4.434 0L3.092 6.637c-1.456.682-1.456 3.044 0 3.726l6.69 3.137a5.17 5.17 0 0 0 4.435 0l6.691-3.137c1.456-.682 1.456-3.044 0-3.726zM22 8.5v5"></path><path d="M5 11.5v5.125C5 19.543 9.694 21 12 21s7-1.457 7-4.375V11.5"></path></g></svg>
+                        <svg
+                          xmlns="http://www.w3.org/2000/svg"
+                          className="w-5 h-5"
+                          width={24}
+                          height={24}
+                          viewBox="0 0 24 24"
+                        >
+                          <g
+                            fill="none"
+                            stroke="currentColor"
+                            strokeLinecap="round"
+                            strokeLinejoin="round"
+                            strokeWidth={1.5}
+                          >
+                            <path d="M14.217 3.5a5.17 5.17 0 0 0-4.434 0L3.092 6.637c-1.456.682-1.456 3.044 0 3.726l6.69 3.137a5.17 5.17 0 0 0 4.435 0l6.691-3.137c1.456-.682 1.456-3.044 0-3.726zM22 8.5v5"></path>
+                            <path d="M5 11.5v5.125C5 19.543 9.694 21 12 21s7-1.457 7-4.375V11.5"></path>
+                          </g>
+                        </svg>
                         <span>My learning</span>
                       </Link>
                       <Link
@@ -597,7 +641,18 @@ export default function Navbar() {
                         onClick={() => setIsProfileOpen(false)}
                         className="flex items-center gap-3 px-3 py-2.5 rounded-lg hover:bg-muted transition-colors"
                       >
-                        <svg xmlns="http://www.w3.org/2000/svg" className="w-5 h-5" width={24} height={24} viewBox="0 0 24 24"><path fill="currentColor" d="m8.962 18.91l.464-.588zM12 5.5l-.54.52a.75.75 0 0 0 1.08 0zm3.038 13.41l.465.59zm-5.612-.588C7.91 17.127 6.253 15.96 4.938 14.48C3.65 13.028 2.75 11.335 2.75 9.137h-1.5c0 2.666 1.11 4.7 2.567 6.339c1.43 1.61 3.254 2.9 4.68 4.024zM2.75 9.137c0-2.15 1.215-3.954 2.874-4.713c1.612-.737 3.778-.541 5.836 1.597l1.08-1.04C10.1 2.444 7.264 2.025 5 3.06C2.786 4.073 1.25 6.425 1.25 9.137zM8.497 19.5c.513.404 1.063.834 1.62 1.16s1.193.59 1.883.59v-1.5c-.31 0-.674-.12-1.126-.385c-.453-.264-.922-.628-1.448-1.043zm7.006 0c1.426-1.125 3.25-2.413 4.68-4.024c1.457-1.64 2.567-3.673 2.567-6.339h-1.5c0 2.198-.9 3.891-2.188 5.343c-1.315 1.48-2.972 2.647-4.488 3.842zM22.75 9.137c0-2.712-1.535-5.064-3.75-6.077c-2.264-1.035-5.098-.616-7.54 1.92l1.08 1.04c2.058-2.137 4.224-2.333 5.836-1.596c1.659.759 2.874 2.562 2.874 4.713zm-8.176 9.185c-.526.415-.995.779-1.448 1.043s-.816.385-1.126.385v1.5c.69 0 1.326-.265 1.883-.59c.558-.326 1.107-.756 1.62-1.16z"></path></svg>
+                        <svg
+                          xmlns="http://www.w3.org/2000/svg"
+                          className="w-5 h-5"
+                          width={24}
+                          height={24}
+                          viewBox="0 0 24 24"
+                        >
+                          <path
+                            fill="currentColor"
+                            d="m8.962 18.91l.464-.588zM12 5.5l-.54.52a.75.75 0 0 0 1.08 0zm3.038 13.41l.465.59zm-5.612-.588C7.91 17.127 6.253 15.96 4.938 14.48C3.65 13.028 2.75 11.335 2.75 9.137h-1.5c0 2.666 1.11 4.7 2.567 6.339c1.43 1.61 3.254 2.9 4.68 4.024zM2.75 9.137c0-2.15 1.215-3.954 2.874-4.713c1.612-.737 3.778-.541 5.836 1.597l1.08-1.04C10.1 2.444 7.264 2.025 5 3.06C2.786 4.073 1.25 6.425 1.25 9.137zM8.497 19.5c.513.404 1.063.834 1.62 1.16s1.193.59 1.883.59v-1.5c-.31 0-.674-.12-1.126-.385c-.453-.264-.922-.628-1.448-1.043zm7.006 0c1.426-1.125 3.25-2.413 4.68-4.024c1.457-1.64 2.567-3.673 2.567-6.339h-1.5c0 2.198-.9 3.891-2.188 5.343c-1.315 1.48-2.972 2.647-4.488 3.842zM22.75 9.137c0-2.712-1.535-5.064-3.75-6.077c-2.264-1.035-5.098-.616-7.54 1.92l1.08 1.04c2.058-2.137 4.224-2.333 5.836-1.596c1.659.759 2.874 2.562 2.874 4.713zm-8.176 9.185c-.526.415-.995.779-1.448 1.043s-.816.385-1.126.385v1.5c.69 0 1.326-.265 1.883-.59c.558-.326 1.107-.756 1.62-1.16z"
+                          ></path>
+                        </svg>
                         <span>Wishlist</span>
                       </Link>
                       <Link
@@ -605,7 +660,25 @@ export default function Navbar() {
                         onClick={() => setIsProfileOpen(false)}
                         className="flex items-center gap-3 px-3 py-2.5 rounded-lg hover:bg-muted transition-colors"
                       >
-                        <svg xmlns="http://www.w3.org/2000/svg" className="w-5 h-5" width={24} height={24} viewBox="0 0 24 24"><g fill="none" stroke="currentColor" strokeWidth={1.5}><path d="M2 12c0-3.771 0-5.657 1.172-6.828S6.229 4 10 4h4c3.771 0 5.657 0 6.828 1.172S22 8.229 22 12s0 5.657-1.172 6.828S17.771 20 14 20h-4c-3.771 0-5.657 0-6.828-1.172S2 15.771 2 12Z"></path><path strokeLinecap="round" d="M10 16H6m8 0h-1.5M2 10h20"></path></g></svg>
+                        <svg
+                          xmlns="http://www.w3.org/2000/svg"
+                          className="w-5 h-5"
+                          width={24}
+                          height={24}
+                          viewBox="0 0 24 24"
+                        >
+                          <g
+                            fill="none"
+                            stroke="currentColor"
+                            strokeWidth={1.5}
+                          >
+                            <path d="M2 12c0-3.771 0-5.657 1.172-6.828S6.229 4 10 4h4c3.771 0 5.657 0 6.828 1.172S22 8.229 22 12s0 5.657-1.172 6.828S17.771 20 14 20h-4c-3.771 0-5.657 0-6.828-1.172S2 15.771 2 12Z"></path>
+                            <path
+                              strokeLinecap="round"
+                              d="M10 16H6m8 0h-1.5M2 10h20"
+                            ></path>
+                          </g>
+                        </svg>
                         <span>Subscriptions</span>
                       </Link>
                       <Link
@@ -634,7 +707,7 @@ export default function Navbar() {
                 </div>
               )}
             </div>
-            
+
             {/* Menu Button */}
             <div ref={mobileMenuRef} className="lg:hidden flex relative">
               <button
@@ -751,6 +824,13 @@ export default function Navbar() {
           </div>
         </div>
       </div>
+      <PreferenceModal
+        isOpen={isPreferenceFilterOpen}
+        onClose={() => setIsPreferenceFilterOpen(false)}
+        onSave={(preferences) => {
+          console.log("Preferences saved:", preferences);
+        }}
+      />
     </nav>
   );
 }

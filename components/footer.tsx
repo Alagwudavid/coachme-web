@@ -1,3 +1,5 @@
+"use client";
+
 import {
   Facebook,
   Youtube,
@@ -12,9 +14,14 @@ import appLogo from "@/public/icon.png";
 import privacyChoiceImage from "@/public/privacy-choices-icon.png";
 import playStoreDownloadImage from "@/public/play-store-mobile-text-label.png";
 import appStoreDownloadImage from "@/public/app-store-mobile-text-label.png";
+import { useRef, useState } from "react";
+import { PreferenceModal } from "./PreferenceModal";
 
 export default function Footer() {
+  const [isPreferenceFilterOpen, setIsPreferenceFilterOpen] = useState(false);
   const currentYear = new Date().getFullYear();
+  const preferenceFilterRef = useRef<HTMLDivElement>(null);
+
   return (
     <footer className="w-full bg-background">
       <div className="max-w-7xl mx-auto px-6 py-6 space-y-6">
@@ -55,7 +62,7 @@ export default function Footer() {
           </div>
           {/* Country/Language Selector */}
           <div className="flex items-center gap-2 text-sm text-foreground hover:text-foreground/80 transition-colors">
-            <button className="flex items-center p-2 text-sm font-medium text-foreground rounded-lg border hover:bg-muted/80 transition-colors cursor-pointer">
+            <button onClick={() => setIsPreferenceFilterOpen(true)} className="flex items-center p-2 text-sm font-medium text-foreground rounded-lg border hover:bg-muted/80 transition-colors cursor-pointer">
               <Globe className="w-5 h-5" />
             </button>
             <span>NGN</span>
@@ -149,6 +156,13 @@ export default function Footer() {
           </Link>
         </div>
       </div>
+      <PreferenceModal
+        isOpen={isPreferenceFilterOpen}
+        onClose={() => setIsPreferenceFilterOpen(false)}
+        onSave={(preferences) => {
+          console.log("Preferences saved:", preferences);
+        }}
+      />
     </footer>
   );
 }

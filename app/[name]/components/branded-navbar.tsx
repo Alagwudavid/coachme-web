@@ -21,6 +21,7 @@ import { getCoachBySlug } from "@/app/data/utils";
 import SearchBar from "./search-bar";
 import appLogo from "../public/logo.png";
 import Tooltip from "../../../components/ui/tooltip";
+import { PreferenceModal } from "@/components/PreferenceModal";
 
 export default function BrandedNavbar() {
   const [isProfileOpen, setIsProfileOpen] = useState(false);
@@ -31,6 +32,7 @@ export default function BrandedNavbar() {
   const coach = getCoachBySlug(coachSlug);
   const mobileMenuRef = useRef<HTMLDivElement>(null);
   const profileRef = useRef<HTMLDivElement>(null);
+  const [isPreferenceFilterOpen, setIsPreferenceFilterOpen] = useState(false);
 
   // Close dropdowns when clicking outside
   useEffect(() => {
@@ -81,14 +83,17 @@ export default function BrandedNavbar() {
           {/* Desktop Right Section - SearchBar, Currency, Menu Items */}
           <div className="flex items-center justify-end gap-2">
             <div className="flex items-center gap-4">
-              <Tooltip label="Inbox" position="bottom">
-                <button className="flex items-center p-2 text-base font-medium text-foreground rounded-lg hover:bg-muted/80 transition-colors cursor-pointer">
-                  <svg xmlns="http://www.w3.org/2000/svg" className="w-6 h-6" width={24} height={24} viewBox="0 0 24 24"><path fill="none" stroke="currentColor" strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M8 9h8m-8 4h6m4-9a3 3 0 0 1 3 3v8a3 3 0 0 1-3 3h-5l-5 3v-3H6a3 3 0 0 1-3-3V7a3 3 0 0 1 3-3z"></path></svg>
+              <Tooltip label="Language & Currency" position="bottom">
+                <button
+                  onClick={() => setIsPreferenceFilterOpen(true)}
+                  className="flex items-center p-2 text-base font-medium text-foreground rounded-lg border hover:bg-muted/80 transition-colors cursor-pointer"
+                >
+                  <Globe className="w-5 h-5" />
                 </button>
               </Tooltip>
-              <Tooltip label="Notifications" position="bottom">
-                <button className="flex items-center p-2 text-base font-medium text-foreground rounded-lg hover:bg-muted/80 transition-colors cursor-pointer">
-                  <svg xmlns="http://www.w3.org/2000/svg" className="w-6 h-6" width={24} height={24} viewBox="0 0 24 24"><path fill="currentColor" fillRule="evenodd" d="M12 1.25A7.75 7.75 0 0 0 4.25 9v.704a3.53 3.53 0 0 1-.593 1.958L2.51 13.385c-1.334 2-.316 4.718 2.003 5.35q1.133.309 2.284.523l.002.005C7.567 21.315 9.622 22.75 12 22.75s4.433-1.435 5.202-3.487l.002-.005a29 29 0 0 0 2.284-.523c2.319-.632 3.337-3.35 2.003-5.35l-1.148-1.723a3.53 3.53 0 0 1-.593-1.958V9A7.75 7.75 0 0 0 12 1.25m3.376 18.287a28.5 28.5 0 0 1-6.753 0c.711 1.021 1.948 1.713 3.377 1.713s2.665-.692 3.376-1.713M5.75 9a6.25 6.25 0 1 1 12.5 0v.704c0 .993.294 1.964.845 2.79l1.148 1.723a2.02 2.02 0 0 1-1.15 3.071a26.96 26.96 0 0 1-14.187 0a2.02 2.02 0 0 1-1.15-3.07l1.15-1.724a5.03 5.03 0 0 0 .844-2.79z" clipRule="evenodd"></path></svg>
+              <Tooltip label="Shopping Cart" position="bottom">
+                <button className="flex items-center p-2 text-base font-medium text-foreground rounded-full hover:bg-muted/80 transition-colors cursor-pointer">
+                  <ShoppingCart className="w-5 h-5" />
                 </button>
               </Tooltip>
               {/* Profile Dropdown */}
@@ -336,6 +341,13 @@ export default function BrandedNavbar() {
           </div>
         </div>
       </div>
+      <PreferenceModal
+        isOpen={isPreferenceFilterOpen}
+        onClose={() => setIsPreferenceFilterOpen(false)}
+        onSave={(preferences) => {
+          console.log("Preferences saved:", preferences);
+        }}
+      />
     </nav>
   );
 }

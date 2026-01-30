@@ -75,7 +75,7 @@ export function HowItWorksSection() {
                                     <TrendingUp className="w-5 h-5" />
                                     <span className="text-sm">Revenue</span>
                                 </div>
-                                <div className="text-background font-bold text-lg">180%</div>
+                                <div className="text-background font-bold text-2xl mx-auto">480%</div>
                             </div>
                         </div>
 

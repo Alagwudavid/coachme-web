@@ -36,7 +36,7 @@ function AboutPage() {
         <div className="w-full bg-sky-200 h-38 lg:h-60 flex items-center justify-center"></div>
       </div>
       <div className="flex gap-6 bg-background p-4 pt-4 md:px-6 lg:px-8 -mt-14 lg:-mt-20">
-        <div className="rounded-full overflow-hidden w-20 h-20 md:w-[150px] md:h-[150px] z-10 mx-auto border-4 border-background">
+        <div className="rounded-full overflow-hidden w-20 h-20 md:w-37.5 md:h-37.5 z-10 mx-auto border-4 border-background">
           {coach?.image ? (
             <Image
               src={coach.image}
