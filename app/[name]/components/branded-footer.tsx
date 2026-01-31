@@ -13,7 +13,7 @@ export default function BrandedFooter() {
   const coach = getCoachBySlug(coachSlug);
   const currentYear = new Date().getFullYear();
   return (
-    <footer className="w-full bg-muted/70 p-4 sm:px-6 py-16 space-y-8 border-t">
+    <footer className="w-full bg-muted/50 p-4 sm:px-6 py-16 space-y-8 border-t">
       {/* Social Icons */}
       <div className="max-w-5xl w-fit mx-auto flex gap-2 items-center justify-start flex-wrap">
         <a
@@ -204,7 +204,7 @@ export default function BrandedFooter() {
             href="/coachme"
             className="flex items-center gap-2 select-none p-2 pl-0"
           >
-            <div className="w-5 h-5 rounded overflow-hidden bg-muted flex items-center justify-center relative">
+            <div className="w-7 h-7 rounded border overflow-hidden bg-muted flex items-center justify-center relative">
               <Image
                 src={appLogo}
                 alt="app logo"

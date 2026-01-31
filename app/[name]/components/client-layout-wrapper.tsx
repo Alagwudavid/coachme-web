@@ -58,7 +58,7 @@ export default function ClientLayoutWrapper({
     <TabRouteProvider coachSlug={coachSlug}>
       <div className="min-h-page w-full flex flex-col mx-auto">
         <main className="w-full mx-auto flex flex-col">
-            <div className="flex flex-col w-full">
+            <div className="flex flex-col w-full bg-background">
                 <div className="overflow-hidden w-full h-fit md:h-70 mx-auto">
                     <Image
                         src={bannerLogo}
