@@ -201,7 +201,7 @@ export default function BrandedFooter() {
           <span className="flex items-center p-2 pr-0">Powered by</span>
           {/* Logo */}
           <Link
-            href="/coachme"
+            href={`/${coachSlug}`}
             className="flex items-center gap-2 select-none p-2 pl-0"
           >
             <div className="w-7 h-7 rounded border overflow-hidden bg-muted flex items-center justify-center relative">
